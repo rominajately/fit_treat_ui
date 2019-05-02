@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/splash">
+
+    <RelativeLayout
+        android:id="@+id/rlLogo"
+        android:layout_width="@dimen/_180sdp"
+        android:layout_height="@dimen/_180sdp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:visibility="invisible">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="@dimen/_140sdp"
+            android:layout_height="@dimen/_140sdp"
+            android:layout_centerHorizontal="true"
+            android:src="@mipmap/logo"/>
+
+        <code.view.CustomTextView
+            android:id="@+id/tvName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/app_name"
+            android:layout_below="@+id/imageView"
+            android:textSize="@dimen/_20sdp"
+            android:textColor="@color/blackNew"
+            app:customFont="centurygothic.otf"/>
+
+    </RelativeLayout>
+
+    <code.view.CustomTextView
+        android:id="@+id/tvLogin"
+        android:layout_width="@dimen/_200sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:gravity="center"
+        android:text="@string/login"
+        android:layout_below="@+id/rlLogo"
+        android:layout_centerHorizontal="true"
+        android:textSize="@dimen/_13sdp"
+        android:textColor="@color/white"
+        android:layout_marginTop="@dimen/_60sdp"
+        app:customFont="OpenSans-Regular.ttf"
+        android:visibility="invisible"
+        android:background="@drawable/rectangle_blue_button"/>
+
+    <code.view.CustomTextView
+        android:id="@+id/tvRegister"
+        android:layout_width="@dimen/_200sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:gravity="center"
+        android:text="@string/register"
+        android:layout_below="@+id/tvLogin"
+        android:layout_centerHorizontal="true"
+        android:textSize="@dimen/_13sdp"
+        android:textColor="@color/white"
+        android:layout_marginTop="@dimen/_25sdp"
+        app:customFont="OpenSans-Regular.ttf"
+        android:visibility="invisible"
+        android:background="@drawable/rectangle_blue_button"/>
+
+</RelativeLayout>

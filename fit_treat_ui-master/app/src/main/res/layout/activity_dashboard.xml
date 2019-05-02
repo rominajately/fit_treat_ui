@@ -1,0 +1,559 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:openDrawer="start">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:id="@+id/rlCalories"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_230sdp"
+                android:background="@mipmap/img_3"
+                 android:layout_marginTop="@dimen/_95sdp">
+
+                <code.view.CustomTextView
+                    android:id="@+id/tvH2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text=""
+                    android:textSize="@dimen/_14sdp"
+                    android:layout_marginTop="@dimen/_95sdp"
+                    android:textColor="@color/white"
+                    app:customFont="OpenSans-Regular.ttf"
+                    android:visibility="visible"/>
+
+                <TextView
+                    android:id="@+id/tvTarget"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text=""
+                    android:textSize="@dimen/_12sdp"
+                    android:layout_below="@+id/tvH2"
+                    android:layout_centerHorizontal="true"
+                    android:textColor="@color/white"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlMeter"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_190sdp"
+                android:background="@mipmap/img_2">
+
+                <RelativeLayout
+                    android:id="@+id/rlHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_45sdp">
+
+                    <RelativeLayout
+                        android:id="@+id/rlMenu"
+                        android:layout_width="@dimen/_30sdp"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:layout_width="@dimen/_20sdp"
+                            android:layout_height="match_parent"
+                            android:id="@+id/ivMenu"
+                            android:layout_centerVertical="true"
+                            app:srcCompat="@drawable/ic_menu"
+                            android:layout_marginLeft="@dimen/_10sdp"/>
+
+                    </RelativeLayout>
+
+                    <code.view.CustomTextView
+                        android:id="@+id/tvHeader"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/app_name"
+                        android:textColor="@color/white"
+                        android:gravity="center_vertical"
+                        android:textSize="@dimen/_16sdp"
+                        android:paddingLeft="@dimen/_10sdp"
+                        app:customFont="Arciform.otf"
+                        android:layout_toRightOf="@+id/rlMenu"/>
+
+                    <RelativeLayout
+                        android:id="@+id/rlInfo"
+                        android:layout_width="@dimen/_30sdp"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:visibility="visible">
+
+                        <ImageView
+                            android:layout_width="@dimen/_18sdp"
+                            android:layout_height="match_parent"
+                            android:id="@+id/ivInfo"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="@dimen/_5sdp"
+                            app:srcCompat="@drawable/ic_info"/>
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rlBMI"
+                    android:layout_width="@dimen/_120sdp"
+                    android:layout_height="@dimen/_120sdp"
+                    android:background="@mipmap/bmi"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="@dimen/_10sdp">
+
+                    <ImageView
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="@dimen/_50sdp"
+                        android:id="@+id/ivBMI"
+                        android:layout_marginLeft="@dimen/_42sdp"
+                        android:layout_marginTop="@dimen/_30sdp"
+                        app:srcCompat="@drawable/ic_indicator"
+                        android:rotation="0"
+                        android:visibility="gone"/>
+
+                    <code.view.CustomTextView
+                        android:id="@+id/tvCalculatedBMI"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="0.0"
+                        android:textSize="@dimen/_20sdp"
+                        android:textColor="@color/blackNew"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        app:customFont="OpenSans-Bold.ttf"/>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlData"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/rlCalories">
+
+                <code.view.CustomTextView
+                    android:id="@+id/tvTargetWeight"
+                    android:layout_width="@dimen/_90sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:gravity="center"
+                    android:text="@string/target_weight"
+                    android:textSize="@dimen/_11sdp"
+                    android:layout_centerHorizontal="true"
+                    android:textColor="@color/blueButton"
+                    app:customFont="OpenSans-Regular.ttf"
+                    android:background="@drawable/rectangle_search_box"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_150sdp"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:layout_below="@+id/tvTargetWeight">
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_130sdp"
+                        android:layout_marginLeft="@dimen/_8sdp"
+                        android:layout_marginRight="@dimen/_8sdp"
+                        app:cardElevation="@dimen/_5sdp"
+                        android:layout_gravity="center"
+                        app:cardCornerRadius="@dimen/_5sdp"
+                        android:layout_weight="1">
+
+                        <RelativeLayout
+                            android:id="@+id/rlDietPlan"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:id="@+id/ivDietPlan"
+                                android:layout_width="@dimen/_75sdp"
+                                android:layout_height="@dimen/_75sdp"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="@dimen/_20sdp"
+                                app:srcCompat="@mipmap/diet_plan" />
+
+                            <code.view.CustomTextView
+                                android:id="@+id/tvDietPlan"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_8sdp"
+                                android:layout_below="@+id/ivDietPlan"
+                                android:text="@string/dietPlan"
+                                android:gravity="center"
+                                android:textSize="@dimen/_12sdp"
+                                android:textColor="@color/darkGrey"
+                                app:customFont="OpenSans-Regular.ttf"/>
+
+                        </RelativeLayout>
+
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_130sdp"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:layout_marginRight="@dimen/_5sdp"
+                        app:cardElevation="@dimen/_5sdp"
+                        android:layout_gravity="center"
+                        app:cardCornerRadius="@dimen/_5sdp"
+                        android:layout_weight="1">
+
+                        <RelativeLayout
+                            android:id="@+id/rlUtilities"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:id="@+id/ivUtilities"
+                                android:layout_width="@dimen/_75sdp"
+                                android:layout_height="@dimen/_75sdp"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="@dimen/_20sdp"
+                                app:srcCompat="@mipmap/utility" />
+
+                            <code.view.CustomTextView
+                                android:id="@+id/tvNearByPharmacy"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_8sdp"
+                                android:layout_below="@+id/ivUtilities"
+                                android:text="@string/utilities"
+                                android:gravity="center"
+                                android:textSize="@dimen/_12sdp"
+                                android:textColor="@color/darkGrey"
+                                app:customFont="OpenSans-Regular.ttf"/>
+
+                        </RelativeLayout>
+
+                    </android.support.v7.widget.CardView>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/ivInfoMain"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@mipmap/instruction"
+                android:scaleType="fitXY"
+                android:visibility="gone"
+                android:layout_marginTop="@dimen/_minus20sdp"/>
+
+        </RelativeLayout>
+
+        <ScrollView
+            android:id="@+id/scroll_side_menu"
+            android:layout_width="@dimen/_210sdp"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/list_child"
+            android:choiceMode="singleChoice"
+            android:dividerHeight="@dimen/_2sdp"
+            android:scrollbars="none"
+            android:layout_gravity="start"
+            android:background="@mipmap/menu_background">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_5sdp">
+
+                    <code.common.RoundedImageView
+                        android:visibility="visible"
+                        android:layout_width="@dimen/_75sdp"
+                        android:layout_height="@dimen/_75sdp"
+                        android:id="@+id/ivPic"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/ic_user"
+                        android:layout_marginTop="@dimen/_10sdp"/>
+
+                    <code.view.CustomTextView
+                        android:id="@+id/tvName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/username"
+                        android:textSize="@dimen/_13sdp"
+                        android:textColor="@color/white"
+                        android:layout_margin="@dimen/_5sdp"
+                        android:layout_below="@+id/ivPic"
+                        app:customFont="OpenSans-Regular.ttf"/>
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/blueDark"/>
+
+                <RelativeLayout
+                    android:id="@+id/rlProfile"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_marginTop="@dimen/_10sdp">
+
+                    <ImageView
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="@dimen/_15sdp"
+                        app:srcCompat="@drawable/ic_my_profile"/>
+
+                    <code.view.CustomTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/my_profile"
+                        android:paddingLeft="@dimen/_45sdp"
+                        android:textSize="@dimen/_14sdp"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/white"
+                        android:singleLine="true"
+                        android:layout_centerVertical="true"
+                        app:customFont="OpenSans-Regular.ttf"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rlInbox"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_35sdp">
+
+                    <ImageView
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="@dimen/_15sdp"
+                        app:srcCompat="@drawable/ic_inbox"/>
+
+                    <code.view.CustomTextView
+                        android:id="@+id/tvInbox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="@string/inbox"
+                        android:paddingLeft="@dimen/_45sdp"
+                        android:textSize="@dimen/_14sdp"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/white"
+                        android:singleLine="true"
+                        android:layout_centerVertical="true"
+                        app:customFont="OpenSans-Regular.ttf"/>
+
+                    <code.view.CustomTextView
+                        android:id="@+id/tvInboxCount"
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:text=""
+                        android:maxLength="2"
+                        android:layout_toRightOf="@+id/tvInbox"
+                        android:textSize="@dimen/_10sdp"
+                        android:gravity="center"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:textColor="@color/white"
+                        android:singleLine="true"
+                        android:visibility="gone"
+                        app:customFont="OpenSans-Regular.ttf"
+                        android:background="@drawable/rectangle_red_box"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rlNearByDoctor"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_35sdp"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="@dimen/_15sdp"
+                        app:srcCompat="@drawable/ic_nearby_doctor_new"/>
+
+                    <code.view.CustomTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/near_by_doctor"
+                        android:paddingLeft="@dimen/_45sdp"
+                        android:textSize="@dimen/_14sdp"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/white"
+                        android:singleLine="true"
+                        android:layout_centerVertical="true"
+                        app:customFont="OpenSans-Regular.ttf"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rlNearByPharmacy"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_35sdp"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="@dimen/_15sdp"
+                        app:srcCompat="@drawable/ic_nearby_pharmacy_new"/>
+
+                    <code.view.CustomTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/near_by_pharmacy"
+                        android:paddingLeft="@dimen/_45sdp"
+                        android:textSize="@dimen/_14sdp"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/white"
+                        android:singleLine="true"
+                        android:layout_centerVertical="true"
+                        app:customFont="OpenSans-Regular.ttf"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rlWrite"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_35sdp">
+
+                    <ImageView
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="@dimen/_15sdp"
+                        app:srcCompat="@drawable/ic_write_to_us"/>
+
+                    <code.view.CustomTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/write_to_us"
+                        android:paddingLeft="@dimen/_45sdp"
+                        android:textSize="@dimen/_14sdp"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/white"
+                        android:singleLine="true"
+                        android:layout_centerVertical="true"
+                        app:customFont="OpenSans-Regular.ttf"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rlAboutUs"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_35sdp">
+
+                    <ImageView
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="@dimen/_15sdp"
+                        app:srcCompat="@drawable/ic_about_us"/>
+
+                    <code.view.CustomTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/aboutUs"
+                        android:paddingLeft="@dimen/_45sdp"
+                        android:textSize="@dimen/_14sdp"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/white"
+                        android:singleLine="true"
+                        android:layout_centerVertical="true"
+                        app:customFont="OpenSans-Regular.ttf"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rlReferences"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_35sdp"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="@dimen/_15sdp"
+                        app:srcCompat="@drawable/ic_references"/>
+
+                    <code.view.CustomTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/references"
+                        android:paddingLeft="@dimen/_45sdp"
+                        android:textSize="@dimen/_14sdp"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/white"
+                        android:singleLine="true"
+                        android:layout_centerVertical="true"
+                        app:customFont="OpenSans-Regular.ttf"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rlLogout"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_35sdp">
+
+                    <ImageView
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="@dimen/_15sdp"
+                        app:srcCompat="@drawable/ic_logout"/>
+
+                    <code.view.CustomTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/logout"
+                        android:paddingLeft="@dimen/_45sdp"
+                        android:textSize="@dimen/_14sdp"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/white"
+                        android:singleLine="true"
+                        android:layout_centerVertical="true"
+                        app:customFont="OpenSans-Regular.ttf"/>
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </android.support.v4.widget.DrawerLayout>
+
+
+</RelativeLayout>

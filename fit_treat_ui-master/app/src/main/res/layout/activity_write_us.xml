@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/rlHeader"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_190sdp">
+
+        <include
+            layout="@layout/inflate_header_curve"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        android:layout_below="@+id/rlHeader">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/llRegisterBottom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <code.view.CustomEditText
+                    android:id="@+id/etMessage"
+                    android:layout_width="@dimen/_250sdp"
+                    android:layout_height="@dimen/_100sdp"
+                    android:gravity="left|top"
+                    android:padding="@dimen/_10sdp"
+                    android:hint="@string/message"
+                    android:textSize="@dimen/_13sdp"
+                    android:textColor="@color/blackNew"
+                    android:layout_centerHorizontal="true"
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:paddingRight="@dimen/_10sdp"
+                    app:customFont="OpenSans-Regular.ttf"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:background="@drawable/rectangle_edit_box"/>
+
+                <code.view.CustomTextView
+                    android:id="@+id/tvSubmit"
+                    android:layout_width="@dimen/_180sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:gravity="center"
+                    android:text="@string/submit"
+                    android:textSize="@dimen/_13sdp"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    app:customFont="OpenSans-Regular.ttf"
+                    android:visibility="visible"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:background="@drawable/rectangle_blue_button"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rlHeader"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_45sdp">
+
+        <include
+            layout="@layout/inflate_header"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlSearchMain"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_below="@+id/rlHeader"
+        android:background="@mipmap/header">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:background="@drawable/rectangle_search_box"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_3sdp">
+
+            <RelativeLayout
+                android:id="@+id/rlSearch"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/ivBack"
+                    android:layout_centerVertical="true"
+                    app:srcCompat="@drawable/ic_search"
+                    android:layout_marginLeft="@dimen/_10sdp"/>
+
+            </RelativeLayout>
+
+            <code.view.CustomEditText
+                android:id="@+id/etSearch"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text=""
+                android:textColor="@color/darkGrey"
+                android:gravity="center_vertical"
+                android:textSize="@dimen/_12sdp"
+                android:paddingLeft="@dimen/_8sdp"
+                android:paddingRight="@dimen/_5sdp"
+                app:customFont="OpenSans-Regular.ttf"
+                android:hint="@string/enter_symptoms"
+                android:textColorHint="@color/grey"
+                android:layout_toRightOf="@+id/rlSearch"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:imeOptions="actionSearch"
+                android:background="@null"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rlSearchMain"/>
+
+</RelativeLayout>

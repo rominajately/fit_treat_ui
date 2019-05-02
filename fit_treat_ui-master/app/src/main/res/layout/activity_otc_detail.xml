@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/rlHeader"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_45sdp">
+
+        <include
+            layout="@layout/inflate_header_otc"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rlHeader"
+        android:layout_margin="@dimen/_10sdp"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/ivSymptoms"
+                    android:layout_centerVertical="true"
+                    app:srcCompat="@drawable/ic_symptoms"/>
+
+                <code.view.CustomTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="0dp"
+                    android:layout_toRightOf="@+id/ivSymptoms"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/_5sdp"
+                    android:text="@string/symptoms"
+                    android:textColor="@color/blackNew"
+                    android:textSize="@dimen/_15sdp"
+                    app:customFont="OpenSans-Regular.ttf" />
+
+            </RelativeLayout>
+
+            <code.view.CustomTextView
+                android:id="@+id/tvSymptoms"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/aboutUsText"
+                android:textColor="@color/darkGrey"
+                android:gravity="center_vertical"
+                android:textSize="@dimen/_14sdp"
+                android:paddingTop="@dimen/_5sdp"
+                android:paddingBottom="@dimen/_5sdp"
+                android:paddingLeft="@dimen/_5sdp"
+                app:customFont="OpenSans-Regular.ttf"
+                android:visibility="gone"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_5sdp">
+
+                <ImageView
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/ivOtc"
+                    android:layout_centerVertical="true"
+                    app:srcCompat="@drawable/ic_symptoms"/>
+
+                <code.view.CustomTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/otc_medicine"
+                    android:textColor="@color/blackNew"
+                    android:gravity="center_vertical"
+                    android:textSize="@dimen/_15sdp"
+                    android:paddingLeft="@dimen/_5sdp"
+                    app:customFont="OpenSans-Regular.ttf"
+                    android:layout_toRightOf="@+id/ivOtc"/>
+
+            </RelativeLayout>
+
+            <code.view.CustomTextView
+                android:id="@+id/tvOtc"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text=""
+                android:textColor="@color/darkGrey"
+                android:gravity="center_vertical"
+                android:textSize="@dimen/_14sdp"
+                android:paddingTop="@dimen/_5sdp"
+                android:paddingBottom="@dimen/_5sdp"
+                android:paddingLeft="@dimen/_5sdp"
+                app:customFont="OpenSans-Regular.ttf"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

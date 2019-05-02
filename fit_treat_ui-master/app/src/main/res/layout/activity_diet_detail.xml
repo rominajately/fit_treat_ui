@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rlHeader"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_45sdp">
+
+        <include
+            layout="@layout/inflate_header"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rlHeader">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_150sdp"
+                android:background="@drawable/rectangle_edit_box"
+                android:layout_margin="@dimen/_10sdp">
+
+                <ImageView
+                    android:id="@+id/ivImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="@dimen/_3sdp"/>
+
+            </RelativeLayout>
+
+            <code.view.CustomTextView
+                android:id="@+id/tvName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/blackNew"
+                android:gravity="center_vertical"
+                android:textSize="@dimen/_16sdp"
+                android:padding="@dimen/_10sdp"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:background="@drawable/rectangle_edit_box"
+                app:customFont="Arciform.otf"/>
+
+            <code.view.CustomTextView
+                android:id="@+id/tvTags"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/blackNew"
+                android:gravity="center_vertical"
+                android:textSize="@dimen/_16sdp"
+                android:padding="@dimen/_10sdp"
+                android:layout_margin="@dimen/_10sdp"
+                android:background="@drawable/rectangle_edit_box"
+                app:customFont="Arciform.otf"/>
+
+            <code.view.CustomTextView
+                android:id="@+id/tvCalories"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/blackNew"
+                android:gravity="center_vertical"
+                android:textSize="@dimen/_16sdp"
+                android:padding="@dimen/_10sdp"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:background="@drawable/rectangle_edit_box"
+                app:customFont="Arciform.otf"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rectangle_edit_box"
+                android:layout_margin="@dimen/_10sdp"
+                android:orientation="vertical">
+
+                <code.view.CustomTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/nutrition_info"
+                    android:textColor="@color/blackNew"
+                    android:gravity="center_vertical"
+                    android:textSize="@dimen/_16sdp"
+                    android:padding="@dimen/_10sdp"
+                    app:customFont="Arciform.otf"/>
+
+                <TextView
+                    android:id="@+id/tvNutritionInfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/blackNew"
+                    android:gravity="center_vertical"
+                    android:textSize="@dimen/_13sdp"
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:paddingRight="@dimen/_10sdp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rectangle_edit_box"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:orientation="vertical">
+
+                <code.view.CustomTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ingredients"
+                    android:textColor="@color/blackNew"
+                    android:gravity="center_vertical"
+                    android:textSize="@dimen/_16sdp"
+                    android:padding="@dimen/_10sdp"
+                    app:customFont="Arciform.otf"/>
+
+                <TextView
+                    android:id="@+id/tvIngredients"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/blackNew"
+                    android:gravity="center_vertical"
+                    android:textSize="@dimen/_13sdp"
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:paddingRight="@dimen/_10sdp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rectangle_edit_box"
+                android:layout_margin="@dimen/_10sdp"
+                android:orientation="vertical">
+
+                <code.view.CustomTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/directions"
+                    android:textColor="@color/blackNew"
+                    android:gravity="center_vertical"
+                    android:textSize="@dimen/_16sdp"
+                    android:padding="@dimen/_10sdp"
+                    app:customFont="Arciform.otf"/>
+
+                <TextView
+                    android:id="@+id/tvDirections"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/blackNew"
+                    android:gravity="center_vertical"
+                    android:textSize="@dimen/_13sdp"
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:paddingRight="@dimen/_10sdp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

@@ -1,0 +1,457 @@
+{
+	"info": {
+		"_postman_id": "214f8d4a-bca1-4f7d-a677-61c4543cb345",
+		"name": "fitTreat_Requests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User Registration",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"firstName\":\"Balkrishna\",\n    \"lastName\":\"Meena\",\n    \"email\": \"testmanil@gmail.com\",\n    \"gender\":\"Male\",\n    \"password\":\"Asdf1234\",\n    \"dateOfBirth\":\"1994/09/25\",\n    \"age\": 24,\n    \"weight\": 75,\n    \"weightUnit\":\"kg\",\n    \"height\": 180,\n    \"heightUnit\":\"cm\",\n    \"foodPreference\":\"Vegan\",\n    \"timeZone\":\"IST\",\n    \"medicalCondition\":\"None\"\n}"
+				},
+				"url": {
+					"raw": "https://fittreat.cfapps.us10.hana.ondemand.com/auth/register",
+					"protocol": "https",
+					"host": [
+						"fittreat",
+						"cfapps",
+						"us10",
+						"hana",
+						"ondemand",
+						"com"
+					],
+					"path": [
+						"auth",
+						"register"
+					]
+				},
+				"description": "User Registration "
+			},
+			"response": []
+		},
+		{
+			"name": "User Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"test@gmail.com\",\n\t\"password\":\"Asdf1234\"\n}"
+				},
+				"url": {
+					"raw": "https://fittreat.cfapps.us10.hana.ondemand.com/auth/login",
+					"protocol": "https",
+					"host": [
+						"fittreat",
+						"cfapps",
+						"us10",
+						"hana",
+						"ondemand",
+						"com"
+					],
+					"path": [
+						"auth",
+						"login"
+					]
+				},
+				"description": "Login Request"
+			},
+			"response": []
+		},
+		{
+			"name": "Inbox Message Read/Unread Status Change",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"docId\":\"5bafe4dbe2178a40285b323d\",\n\t\"msgId\":\"5baf77fc9c07a51eb4a47f26\",\n\t\"readFlag\" : true\n}"
+				},
+				"url": {
+					"raw": "https://fittreat.cfapps.us10.hana.ondemand.com/api/readMessage/5bb12331f490ad00426b6f6d/5bb12331f490ad00426b6f6e",
+					"protocol": "https",
+					"host": [
+						"fittreat",
+						"cfapps",
+						"us10",
+						"hana",
+						"ondemand",
+						"com"
+					],
+					"path": [
+						"api",
+						"readMessage",
+						"5bb12331f490ad00426b6f6d",
+						"5bb12331f490ad00426b6f6e"
+					]
+				},
+				"description": "Inbox Message - Set Read/ Undread\napi/readMessage/{_id from user}/{_id - Message Object}"
+			},
+			"response": []
+		},
+		{
+			"name": "User Profile Update",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\":\"5bb12331f490ad00426b6f6d\",\n\t\"firstName\":\"Test\",\n\t\"lastName\":\"User\",\n\t\"weight\":65,\n\t\"height\":178,\n\t\"medicalCondition\":\"Hyper Tension\"\n}"
+				},
+				"url": {
+					"raw": "https://fittreat.cfapps.us10.hana.ondemand.com/api/updateProfile",
+					"protocol": "https",
+					"host": [
+						"fittreat",
+						"cfapps",
+						"us10",
+						"hana",
+						"ondemand",
+						"com"
+					],
+					"path": [
+						"api",
+						"updateProfile"
+					]
+				},
+				"description": "Updates User Info - Do not provide options to update DOB\nAlways provide user ID"
+			},
+			"response": []
+		},
+		{
+			"name": "Test Service ",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "https://fittreat.cfapps.us10.hana.ondemand.com/auth/test",
+					"protocol": "https",
+					"host": [
+						"fittreat",
+						"cfapps",
+						"us10",
+						"hana",
+						"ondemand",
+						"com"
+					],
+					"path": [
+						"auth",
+						"test"
+					]
+				},
+				"description": "Test Service to check connectivity with database"
+			},
+			"response": []
+		},
+		{
+			"name": "Set Target Weight",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\":\"5bdeba8d6c9447004ed379c3\",\n\t\"targetWeight\" : 72,\n\t\"targetDate\"\t: 1540837800000,\n\t\"targetCalories\" : -720,\n\t\"weightUnit\":\"kg\"\n}"
+				},
+				"url": {
+					"raw": "https://fittreat.cfapps.us10.hana.ondemand.com/api/targetWeight",
+					"protocol": "https",
+					"host": [
+						"fittreat",
+						"cfapps",
+						"us10",
+						"hana",
+						"ondemand",
+						"com"
+					],
+					"path": [
+						"api",
+						"targetWeight"
+					]
+				},
+				"description": "provide id of the user alongwith Target Weight, Date, Calories\nid - String (id of the user)\nTarget Weight - Number\nTarget Calories- Number\nTarget Date - Number (Milliseconds)"
+			},
+			"response": []
+		},
+		{
+			"name": "Reload Inbox",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "https://fittreat.cfapps.us10.hana.ondemand.com/api/reloadMessages/5bb12331f490ad00426b6f6d",
+					"protocol": "https",
+					"host": [
+						"fittreat",
+						"cfapps",
+						"us10",
+						"hana",
+						"ondemand",
+						"com"
+					],
+					"path": [
+						"api",
+						"reloadMessages",
+						"5bb12331f490ad00426b6f6d"
+					]
+				},
+				"description": "/api/reloadMessages/{User Id}\n\nProvides Message Count as well along with unread message count"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Meals For User",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://fittreat.cfapps.us10.hana.ondemand.com/api/getMeals/5bd5fc3db3f74a004ed84931",
+					"protocol": "https",
+					"host": [
+						"fittreat",
+						"cfapps",
+						"us10",
+						"hana",
+						"ondemand",
+						"com"
+					],
+					"path": [
+						"api",
+						"getMeals",
+						"5bd5fc3db3f74a004ed84931"
+					]
+				},
+				"description": "api/getMeals/{id}"
+			},
+			"response": []
+		},
+		{
+			"name": "First 5 symptoms",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://fittreat.cfapps.us10.hana.ondemand.com/api/initialSymptoms",
+					"protocol": "https",
+					"host": [
+						"fittreat",
+						"cfapps",
+						"us10",
+						"hana",
+						"ondemand",
+						"com"
+					],
+					"path": [
+						"api",
+						"initialSymptoms"
+					]
+				},
+				"description": "to be used when navigating to \"Search Symptoms\" view or anywhere so as to keep the data persisted"
+			},
+			"response": []
+		},
+		{
+			"name": "Search Symptoms",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://fittreat.cfapps.us10.hana.ondemand.com/api/searchSymptoms/ache",
+					"protocol": "https",
+					"host": [
+						"fittreat",
+						"cfapps",
+						"us10",
+						"hana",
+						"ondemand",
+						"com"
+					],
+					"path": [
+						"api",
+						"searchSymptoms",
+						"ache"
+					]
+				},
+				"description": "can be trigerred after 3 characters are entered\napi/searchSymptoms/{text that user entered}"
+			},
+			"response": []
+		},
+		{
+			"name": "Send Message to Admin",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\":\"5bd599fc01d82025f8bed22e\",\n\t\"msg\":\"This is a test message being sent to admin\"\n}"
+				},
+				"url": {
+					"raw": "https://fittreat.cfapps.us10.hana.ondemand.com/api/sendMsgToAdmin",
+					"protocol": "https",
+					"host": [
+						"fittreat",
+						"cfapps",
+						"us10",
+						"hana",
+						"ondemand",
+						"com"
+					],
+					"path": [
+						"api",
+						"sendMsgToAdmin"
+					]
+				},
+				"description": "id - accepts id of the user"
+			},
+			"response": []
+		},
+		{
+			"name": "Photo Update Service",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\":\"5bd599fc01d82025f8bed22e\",\n\t\"userPhoto\":\"test photo update\"\n}"
+				},
+				"url": {
+					"raw": "https://fittreat.cfapps.us10.hana.ondemand.com/api/photoUpdate",
+					"protocol": "https",
+					"host": [
+						"fittreat",
+						"cfapps",
+						"us10",
+						"hana",
+						"ondemand",
+						"com"
+					],
+					"path": [
+						"api",
+						"photoUpdate"
+					]
+				},
+				"description": "id- id of the user\nuserPhoto - base64 string of photo"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Application Data",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"testmail@gmail.com\",\n\t\"password\":\"Asdf1234\"\n}"
+				},
+				"url": {
+					"raw": "https://fittreat.cfapps.us10.hana.ondemand.com/api/getAppData",
+					"protocol": "https",
+					"host": [
+						"fittreat",
+						"cfapps",
+						"us10",
+						"hana",
+						"ondemand",
+						"com"
+					],
+					"path": [
+						"api",
+						"getAppData"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filtered Meals",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://fittreat.cfapps.us10.hana.ondemand.com/api/filterMeals/Vegan/Juice",
+					"protocol": "https",
+					"host": [
+						"fittreat",
+						"cfapps",
+						"us10",
+						"hana",
+						"ondemand",
+						"com"
+					],
+					"path": [
+						"api",
+						"filterMeals",
+						"Vegan",
+						"Juice"
+					]
+				},
+				"description": "This service is only for filters - Snacks, Juice\n\nfilterMeals/{Snacks or Juice}/{Vegan or Vegetarian or Non-Vegetarian}\n\n3rd param should be extracted from user's food preference"
+			},
+			"response": []
+		}
+	]
+}

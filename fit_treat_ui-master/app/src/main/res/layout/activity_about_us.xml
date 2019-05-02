@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/rlHeader"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_45sdp">
+
+        <include
+            layout="@layout/inflate_header"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rlHeader">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="@dimen/_10sdp">
+
+            <code.view.CustomTextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/aboutUs"
+                android:textColor="@color/blackNew"
+                android:gravity="center_vertical"
+                android:textSize="@dimen/_15sdp"
+                android:paddingLeft="@dimen/_5sdp"
+                app:customFont="OpenSans-Regular.ttf"/>
+
+            <TextView
+                android:id="@+id/tvAboutUs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_10sdp"
+                android:textColor="@color/darkGrey"
+                android:textSize="@dimen/_12sdp"/>
+
+            <code.view.CustomTextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/references"
+                android:textColor="@color/blackNew"
+                android:gravity="center_vertical"
+                android:textSize="@dimen/_15sdp"
+                android:paddingLeft="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                app:customFont="OpenSans-Regular.ttf"/>
+
+            <TextView
+                android:id="@+id/tvReference"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_10sdp"
+                android:textColor="@color/darkGrey"
+                android:textSize="@dimen/_12sdp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

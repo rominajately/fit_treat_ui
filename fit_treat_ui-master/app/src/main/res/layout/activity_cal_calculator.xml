@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:id="@+id/rlHeader"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_190sdp">
+
+        <include
+            layout="@layout/inflate_header_curve"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        android:layout_below="@+id/rlHeader">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/llRegisterBottom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <RelativeLayout
+                    android:id="@+id/rlGender"
+                    android:layout_width="@dimen/_250sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:visibility="visible">
+
+                    <code.view.CustomTextView
+                        android:id="@+id/tvGender"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/gender"
+                        android:textSize="@dimen/_13sdp"
+                        android:textColor="@color/blackNew"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_centerVertical="true"
+                        app:customFont="OpenSans-Regular.ttf"/>
+
+                    <code.view.CustomRadioButton
+                        android:id="@+id/rbMale"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="@string/male"
+                        android:textSize="@dimen/_13sdp"
+                        android:textColor="@color/blackNew"
+                        app:customFont="OpenSans-Regular.ttf"
+                        android:layout_toRightOf="@+id/tvGender"
+                        android:layout_marginLeft="@dimen/_20sdp"/>
+
+                    <code.view.CustomRadioButton
+                        android:id="@+id/rbFemale"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="@string/female"
+                        android:textSize="@dimen/_13sdp"
+                        android:textColor="@color/blackNew"
+                        app:customFont="OpenSans-Regular.ttf"
+                        android:layout_toRightOf="@+id/rbMale"
+                        android:layout_marginLeft="@dimen/_20sdp"/>
+
+                </RelativeLayout>
+
+                <code.view.CustomTextView
+                    android:layout_width="@dimen/_250sdp"
+                    android:layout_height="match_parent"
+                    android:text="@string/height"
+                    android:textSize="@dimen/_12sdp"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/darkGrey"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:singleLine="true"
+                    android:layout_centerVertical="true"
+                    app:customFont="OpenSans-Regular.ttf"/>
+
+                <RelativeLayout
+                    android:id="@+id/rlHeight"
+                    android:layout_width="@dimen/_250sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:visibility="visible"
+                    android:background="@drawable/rectangle_edit_box">
+
+                    <code.view.CustomEditText
+                        android:id="@+id/etHeight"
+                        android:layout_width="@dimen/_250sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:gravity="center_vertical"
+                        android:hint="@string/height"
+                        android:textSize="@dimen/_13sdp"
+                        android:textColor="@color/blackNew"
+                        android:inputType="numberDecimal"
+                        android:layout_centerHorizontal="true"
+                        android:paddingLeft="@dimen/_10sdp"
+                        android:paddingRight="@dimen/_10sdp"
+                        app:customFont="OpenSans-Regular.ttf"
+                        android:singleLine="true"
+                        android:maxLength="4"
+                        android:background="@null"/>
+
+                    <Spinner
+                        android:id="@+id/spinnerHeight"
+                        android:layout_width="@dimen/_80sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_marginRight="@dimen/_2sdp"
+                        android:background="@drawable/drop_down_shape"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:popupBackground="@color/white" />
+
+                </RelativeLayout>
+
+
+                <code.view.CustomTextView
+                    android:layout_width="@dimen/_250sdp"
+                    android:layout_height="match_parent"
+                    android:text="@string/weight"
+                    android:textSize="@dimen/_12sdp"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/darkGrey"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:singleLine="true"
+                    android:layout_centerVertical="true"
+                    app:customFont="OpenSans-Regular.ttf"/>
+
+                <RelativeLayout
+                    android:id="@+id/rlWeight"
+                    android:layout_width="@dimen/_250sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:visibility="visible"
+                    android:background="@drawable/rectangle_edit_box">
+
+                    <code.view.CustomEditText
+                        android:id="@+id/etWeight"
+                        android:layout_width="@dimen/_250sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:gravity="center_vertical"
+                        android:hint="@string/weight"
+                        android:textSize="@dimen/_13sdp"
+                        android:textColor="@color/blackNew"
+                        android:inputType="numberDecimal"
+                        android:layout_centerHorizontal="true"
+                        android:paddingLeft="@dimen/_10sdp"
+                        android:paddingRight="@dimen/_10sdp"
+                        app:customFont="OpenSans-Regular.ttf"
+                        android:singleLine="true"
+                        android:background="@null"/>
+
+                    <Spinner
+                        android:id="@+id/spinnerWeight"
+                        android:layout_width="@dimen/_80sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_marginRight="@dimen/_2sdp"
+                        android:background="@drawable/drop_down_shape"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:popupBackground="@color/white" />
+
+                </RelativeLayout>
+
+
+                <code.view.CustomTextView
+                    android:layout_width="@dimen/_250sdp"
+                    android:layout_height="match_parent"
+                    android:text="@string/age"
+                    android:textSize="@dimen/_12sdp"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/darkGrey"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:singleLine="true"
+                    android:layout_centerVertical="true"
+                    app:customFont="OpenSans-Regular.ttf"/>
+
+
+                <RelativeLayout
+                    android:layout_width="@dimen/_250sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:visibility="visible"
+                    android:background="@drawable/rectangle_edit_box">
+
+                    <code.view.CustomEditText
+                        android:id="@+id/etAge"
+                        android:layout_width="@dimen/_250sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:gravity="center_vertical"
+                        android:hint="@string/age"
+                        android:textSize="@dimen/_13sdp"
+                        android:textColor="@color/blackNew"
+                        android:inputType="number"
+                        android:maxLength="3"
+                        android:layout_centerHorizontal="true"
+                        android:paddingLeft="@dimen/_10sdp"
+                        android:paddingRight="@dimen/_10sdp"
+                        app:customFont="OpenSans-Regular.ttf"
+                        android:singleLine="true"
+                        android:background="@null"/>
+
+                </RelativeLayout>
+
+                <code.view.CustomTextView
+                    android:layout_width="@dimen/_250sdp"
+                    android:layout_height="match_parent"
+                    android:text="@string/target_weight"
+                    android:textSize="@dimen/_12sdp"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/darkGrey"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:singleLine="true"
+                    android:layout_centerVertical="true"
+                    app:customFont="OpenSans-Regular.ttf"/>
+
+
+                <RelativeLayout
+                    android:id="@+id/rlTWeight"
+                    android:layout_width="@dimen/_250sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:visibility="visible"
+                    android:background="@drawable/rectangle_edit_box">
+
+                    <code.view.CustomEditText
+                        android:id="@+id/etTarWeight"
+                        android:layout_width="@dimen/_250sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:gravity="center_vertical"
+                        android:hint="@string/target_weight"
+                        android:textSize="@dimen/_13sdp"
+                        android:textColor="@color/blackNew"
+                        android:inputType="numberDecimal"
+                        android:layout_centerHorizontal="true"
+                        android:paddingLeft="@dimen/_10sdp"
+                        android:paddingRight="@dimen/_10sdp"
+                        app:customFont="OpenSans-Regular.ttf"
+                        android:singleLine="true"
+                        android:background="@null"/>
+
+                    <Spinner
+                        android:id="@+id/spinnerTarWeight"
+                        android:layout_width="@dimen/_80sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_marginRight="@dimen/_2sdp"
+                        android:background="@drawable/drop_down_shape"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:popupBackground="@color/white" />
+
+                </RelativeLayout>
+
+                <code.view.CustomTextView
+                    android:layout_width="@dimen/_250sdp"
+                    android:layout_height="match_parent"
+                    android:text="@string/time_period"
+                    android:textSize="@dimen/_12sdp"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/darkGrey"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:singleLine="true"
+                    android:layout_centerVertical="true"
+                    app:customFont="OpenSans-Regular.ttf"/>
+
+
+                <RelativeLayout
+                    android:id="@+id/rlTime"
+                    android:layout_width="@dimen/_250sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:visibility="visible"
+                    android:background="@drawable/rectangle_edit_box">
+
+                    <code.view.CustomEditText
+                        android:id="@+id/etTime"
+                        android:layout_width="@dimen/_250sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:gravity="center_vertical"
+                        android:hint="@string/time_period"
+                        android:textSize="@dimen/_13sdp"
+                        android:textColor="@color/blackNew"
+                        android:inputType="number"
+                        android:layout_centerHorizontal="true"
+                        android:paddingLeft="@dimen/_10sdp"
+                        android:paddingRight="@dimen/_10sdp"
+                        app:customFont="OpenSans-Regular.ttf"
+                        android:singleLine="true"
+                        android:background="@null"/>
+
+                    <Spinner
+                        android:id="@+id/spinnerTime"
+                        android:layout_width="@dimen/_80sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_marginRight="@dimen/_2sdp"
+                        android:background="@drawable/drop_down_shape"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:popupBackground="@color/white" />
+
+                </RelativeLayout>
+
+                <code.view.CustomTextView
+                    android:layout_width="@dimen/_250sdp"
+                    android:layout_height="match_parent"
+                    android:text="@string/dailyActivities"
+                    android:textSize="@dimen/_12sdp"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/darkGrey"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:singleLine="true"
+                    android:layout_centerVertical="true"
+                    app:customFont="OpenSans-Regular.ttf"/>
+
+
+                <RelativeLayout
+                    android:id="@+id/rlActivity"
+                    android:layout_width="@dimen/_250sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:visibility="visible"
+                    android:background="@drawable/rectangle_edit_box">
+
+                    <Spinner
+                        android:id="@+id/spinnerActivity"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_marginRight="@dimen/_2sdp"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:background="@drawable/drop_down_shape"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:popupBackground="@color/white" />
+
+                </RelativeLayout>
+
+                <code.view.CustomTextView
+                    android:id="@+id/tvSubmit"
+                    android:layout_width="@dimen/_180sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:gravity="center"
+                    android:text="@string/submit"
+                    android:textSize="@dimen/_13sdp"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    app:customFont="OpenSans-Regular.ttf"
+                    android:visibility="visible"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:background="@drawable/rectangle_blue_button"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

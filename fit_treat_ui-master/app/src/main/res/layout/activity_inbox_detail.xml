@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rlHeader"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_45sdp">
+
+        <include
+            layout="@layout/inflate_header"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rlHeader"
+        android:layout_margin="@dimen/_5sdp">
+
+        <ImageView
+            android:id="@+id/ivDietPhoto"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_60sdp"
+            android:layout_marginLeft="@dimen/_4sdp"
+            app:srcCompat="@drawable/ic_inbox_user" />
+
+        <code.view.CustomTextView
+            android:id="@+id/tvName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:layout_marginLeft="@dimen/_6sdp"
+            android:layout_toRightOf="@+id/ivDietPhoto"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:text=""
+            android:textSize="@dimen/_14sdp"
+            android:textColor="@color/darkGrey"
+            android:maxLines="2"
+            android:lineSpacingExtra="-5dp"
+            app:customFont="OpenSans-Bold.ttf"/>
+
+        <code.view.CustomTextView
+            android:id="@+id/tvTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvName"
+            android:layout_marginLeft="@dimen/_6sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:layout_toRightOf="@+id/ivDietPhoto"
+            android:textColor="@color/darkGrey"
+            android:text=""
+            android:textSize="@dimen/_11sdp"
+            app:customFont="OpenSans-Regular.ttf"/>
+
+    </RelativeLayout>
+
+    <code.view.CustomTextView
+        android:id="@+id/tvDetails"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:layout_alignParentRight="true"
+        android:textColor="@color/darkGrey"
+        android:layout_below="@+id/rlMain"
+        android:text=""
+        android:textSize="@dimen/_14sdp"
+        app:customFont="OpenSans-Regular.ttf"/>
+
+</RelativeLayout>
